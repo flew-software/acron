@@ -4,7 +4,6 @@ def parse(config):
     out = dict()
 
     c = config.split(" ")
-    print(c)
     out["minute"] = c[0]
     out["hour"] = c[1]
     out["date"] = c[2]
