@@ -1,13 +1,18 @@
-# Schedule Library imported
-import sched
+import schedule
 import time
+import src.core.configParse
 
-# Functions setup
-s = sched.scheduler(time.time, time.sleep)
-
-
-def print_time(a='default'):
-    print("From print_time", time.time(), a)
+data = src.core.configParse.parse("0 0 0 0 0 echo hi")
 
 
-print(time.time())
+def job():
+    print("Command running: " + data["command"])
+
+
+schedule.every(int(data["minute"])).minute.do(job)
+schedule.every(int(data["hour"])).hour.do(job)
+
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
