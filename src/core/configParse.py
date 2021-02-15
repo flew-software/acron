@@ -12,7 +12,6 @@ def parse(config):
 
     out["command"] = c[5]
     i = 6
-    print(len(c))
     while i < len(c):
         out["command"] += " " + c[i]
         i += 1
