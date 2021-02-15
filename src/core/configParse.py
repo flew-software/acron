@@ -1,7 +1,5 @@
 
 # parses and returns the values of the config [NOTE: config parser should be given only a line of text]
-
-
 def parse(config):
     out = dict()
 
