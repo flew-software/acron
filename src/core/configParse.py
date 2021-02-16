@@ -17,3 +17,15 @@ def parse(config):
         i += 1
 
     return out
+
+
+# parses and returns the values of the given file
+def parseFromFile(filename):
+    f = open(filename)
+    lines = f.readlines()
+    out = []
+
+    for i in lines:
+        out.append(parse(i))
+
+    return out
